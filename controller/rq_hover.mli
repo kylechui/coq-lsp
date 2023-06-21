@@ -5,4 +5,4 @@
 (* Written by: Emilio J. Gallego Arias                                  *)
 (************************************************************************)
 
-val hover : Request.position
+val hover : token:Coq.Limits.Token.t -> Request.position
