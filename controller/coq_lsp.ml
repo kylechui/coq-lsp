@@ -88,7 +88,7 @@ let rec lsp_init_loop ~ifn ~ofn ~cmdline ~debug =
     | Init_effect.Success w -> w)
 
 let lsp_main bt coqcorelib coqlib ocamlpath vo_load_path ml_include_path delay =
-  Coq.Limits.start ();
+  Limits.start ();
 
   (* Try to be sane w.r.t. \r\n in Windows *)
   Stdlib.set_binary_mode_in stdin true;

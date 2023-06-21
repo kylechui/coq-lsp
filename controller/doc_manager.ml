@@ -164,7 +164,7 @@ module Check : sig
 
   val maybe_check :
        ofn:(Yojson.Safe.t -> unit)
-    -> token:Coq.Limits.Token.t
+    -> token:Limits.Token.t
     -> (Int.Set.t * Fleche.Doc.t) option
 end = struct
   let pending = ref None

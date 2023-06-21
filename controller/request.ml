@@ -31,7 +31,7 @@ module Data = struct
         }
     | IntDocRequest of
         { uri : Lang.LUri.File.t
-        ; handler : token:Coq.Limits.Token.t -> document
+        ; handler : token:Limits.Token.t -> document
         }
     | PosRequest of
         { uri : Lang.LUri.File.t
@@ -45,7 +45,7 @@ module Data = struct
         ; point : int * int
         ; version : int option
         ; postpone : bool
-        ; handler : token:Coq.Limits.Token.t -> position
+        ; handler : token:Limits.Token.t -> position
         }
 
   (* Debug printing *)

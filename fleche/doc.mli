@@ -75,7 +75,7 @@ val asts : t -> Node.Ast.t list
 
 (** Create a new Coq document, this is cached! *)
 val create :
-     token:Coq.Limits.Token.t
+     token:Limits.Token.t
   -> state:Coq.State.t
   -> workspace:Coq.Workspace.t
   -> uri:Lang.LUri.File.t
@@ -103,7 +103,7 @@ end
     function [ofn] is used to send partial results. *)
 val check :
      ofn:(Yojson.Safe.t -> unit)
-  -> token:Coq.Limits.Token.t
+  -> token:Limits.Token.t
   -> target:Target.t
   -> doc:t
   -> unit
@@ -111,7 +111,7 @@ val check :
 
 (** [save ~doc] will save [doc] .vo file. It will fail if proofs are open, or if
     the document completion status is not [Yes] *)
-val save : token:Coq.Limits.Token.t -> doc:t -> (unit, Loc.t) Coq.Protect.E.t
+val save : token:Limits.Token.t -> doc:t -> (unit, Loc.t) Coq.Protect.E.t
 
 (** This is internal, to workaround the Coq multiple-docs problem *)
 val create_failed_permanent :

@@ -11,7 +11,7 @@ module Init : sig
   type t = Coq.State.t * Coq.Workspace.t * Lang.LUri.File.t
 
   val eval :
-    token:Coq.Limits.Token.t -> t -> (Coq.State.t, Loc.t) Coq.Protect.E.t
+    token:Limits.Token.t -> t -> (Coq.State.t, Loc.t) Coq.Protect.E.t
 end
 
 module Interp : sig
@@ -19,7 +19,7 @@ module Interp : sig
 
   (** Interpret a command, possibly memoizing it *)
   val eval :
-       token:Coq.Limits.Token.t
+       token:Limits.Token.t
     -> t
     -> Coq.State.t Coq.Interp.interp_result Stats.t
 
@@ -34,7 +34,7 @@ module Admit : sig
   type t = Coq.State.t
 
   val eval :
-    token:Coq.Limits.Token.t -> t -> (Coq.State.t, Loc.t) Coq.Protect.E.t
+    token:Limits.Token.t -> t -> (Coq.State.t, Loc.t) Coq.Protect.E.t
 end
 
 module CacheStats : sig

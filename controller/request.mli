@@ -31,7 +31,7 @@ module Data : sig
         }
     | IntDocRequest of
         { uri : Lang.LUri.File.t
-        ; handler : token:Coq.Limits.Token.t -> document
+        ; handler : token:Limits.Token.t -> document
         }
     | PosRequest of
         { uri : Lang.LUri.File.t
@@ -45,11 +45,11 @@ module Data : sig
         ; point : int * int
         ; version : int option
         ; postpone : bool
-        ; handler : token:Coq.Limits.Token.t -> position
+        ; handler : token:Limits.Token.t -> position
         }
 
   (* Debug printing *)
   val data : Format.formatter -> t -> unit
   val dm_request : t -> Doc_manager.Request.request
-  val serve : token:Coq.Limits.Token.t -> doc:Fleche.Doc.t -> t -> R.t
+  val serve : token:Limits.Token.t -> doc:Fleche.Doc.t -> t -> R.t
 end
