@@ -367,7 +367,7 @@ let lsp_init_process ~ofn ~cmdline ~debug msg : Init_effect.t =
     LIO.logMessage ~lvl:3 ~message;
     let result, dirs = Rq_init.do_initialize ~params in
     (* We don't need to interrupt this *)
-    let token = Coq.Limits.Token.make () in
+    let token = Coq.Limits.Token.create () in
     Rq.Action.now (Ok result) |> Rq.serve ~ofn ~token ~id;
     LIO.logMessage ~lvl:3 ~message:"Server initialized";
     (* Workspace initialization *)
@@ -463,7 +463,7 @@ let dispatch_message ~ofn ~token ~state (com : LSP.Message.t) : State.t =
 let current_token = ref None
 
 let token_factory () =
-  let token = Coq.Limits.Token.make () in
+  let token = Coq.Limits.Token.create () in
   current_token := Some token;
   token
 
